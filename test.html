@@ -11,7 +11,7 @@
 
    <!--  Latest compiled and minified JavaScript -->
     <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="CSS/test.css">
     
       <style type="text/css">
         html, body { height: auto; margin: 0; padding: 0; }
@@ -25,25 +25,25 @@
   </head>
   <body>
     <header>
-      <img id="logo" src="Katrina_Logo_pink.png"/>
+      <img id="logo" src="images/Katrina_Logo_pink.png"/>
 
       <nav>
         <a href="test.html" class="find_nav">WELCOME |</a>
-        <a href="quiz.html" class="find_nav">DISCOVER |</a>
+        <a href="destinations/quiz.html" class="find_nav">DISCOVER |</a>
         <a class="find_nav" class="dropdown-toggle" data-toggle="dropdown" href="#">EXPLORE <span class="caret"></span> </a>
        <!--      <div class="dropList"> -->
             <ul class="dropdown-menu">
-              <li><a href="Iceland.html">Iceland</a></li>
-              <li><a href="Spain.html">Spain</a></li>
-              <li><a href="Thailand.html">Thailand</a></li>
-              <li><a href="Switzerland.html">Switzerland</a></li>
-              <li><a href="Panama.html">Panama</a></li>
-              <li><a href="Morocco.html">Morocco</a></li>
-              <li><a href="Kenya.html">Kenya</a></li>
-              <li><a href="Turkey.html">Turkey</a></li>
-              <li><a href="India.html">India</a></li>
-              <li><a href="Netherlands.html">Netherlands</a></li>
-              <li><a href="Vietnam.html">Vietnam</a></li> 
+              <li><a href="destinations/Iceland.html">Iceland</a></li>
+              <li><a href="destinations/Spain.html">Spain</a></li>
+              <li><a href="destinations/Thailand.html">Thailand</a></li>
+              <li><a href="destinations/Switzerland.html">Switzerland</a></li>
+              <li><a href="destinations/Panama.html">Panama</a></li>
+              <li><a href="destinations/Morocco.html">Morocco</a></li>
+              <li><a href="destinations/Kenya.html">Kenya</a></li>
+              <li><a href="destinations/Turkey.html">Turkey</a></li>
+<!--               <li><a href="destinations/India.html">India</a></li>
+              <li><a href="destinations/Netherlands.html">Netherlands</a></li> -->
+              <li><a href="destinations/Vietnam.html">Vietnam</a></li> 
             </ul>
       <!--     </div> -->
       </nav>
@@ -134,29 +134,8 @@
           map.mapTypes.set(customMapTypeId, customMapType);
           map.setMapTypeId(customMapTypeId);
           setMarkers(map);
-          // marker.setMap(map);
-
-          // var marker = new google.maps.Marker({
-          //     position: {lat:41.3833, lng: 2.1833},
-          //     map: map,
-          //     title: 'Hello World!'
-          //      });
-           // var image = 'images/lion.jpg';
-           //  var marker = new google.maps.Marker({
-           //    position: {lat:41.3833, lng: 2.1833}
-           //    map: map,
-            
-           //  });
-//****
-         // setMarkers(map);
-       
-
-
-       } // END INIT MAP FUNCTION
+       } 
       
-
-// Data for the markers consisting of a name, a LatLng and a zIndex for the
-// // order in which these markers should display on top of each other.
     var visited = [
         ['Canada ', 43.664620, -79.380118, 1],
         ['Scotland', 56.885134, -4.203599, 2],
@@ -238,7 +217,6 @@
     <section class="module content">
       <div class="row1">
         <p>Travels become memories. Adventures become snapshots. Fellow travelers become friends. Welcome to my attempt at chronicling years of wanderlust. Journey on...
-        <!-- add first letter trick in css -->
        </p>
       </div>
     <section>
@@ -250,7 +228,6 @@
      <section class="module content">
         <div class="row1">
         <p>Travel is the only thing you buy that makes you richer
-        <!-- add first letter trick in css -->
        </p>
       </div>
     </section>
@@ -262,7 +239,6 @@
     <section class="module content">
         <div class="row1">
         <p>Not all those who wander are lost -J.R.R. Tolkien
-        <!-- add first letter trick in css -->
        </p>
       </div>
     </section>
@@ -274,6 +250,6 @@
     </div>
     <footer>
     </footer>
-    <script src="test.js"></script>
+    <script src="JS/test.js"></script>
   </body>
 </html>
