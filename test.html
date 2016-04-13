@@ -1,0 +1,279 @@
+<!DocType HTML> 
+<html>
+  <head>
+    <title>Galivant</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!--     Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+   <!--  Latest compiled and minified JavaScript -->
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="test.css">
+    
+      <style type="text/css">
+        html, body { height: auto; margin: 0; padding: 0; }
+        #map { height: 450px; }
+      </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="Katrina_Logo_pink.png"/>
+
+      <nav>
+        <a href="test.html" class="find_nav">WELCOME |</a>
+        <a href="quiz.html" class="find_nav">DISCOVER |</a>
+        <a class="find_nav" class="dropdown-toggle" data-toggle="dropdown" href="#">EXPLORE <span class="caret"></span> </a>
+       <!--      <div class="dropList"> -->
+            <ul class="dropdown-menu">
+              <li><a href="Iceland.html">Iceland</a></li>
+              <li><a href="Spain.html">Spain</a></li>
+              <li><a href="Thailand.html">Thailand</a></li>
+              <li><a href="Switzerland.html">Switzerland</a></li>
+              <li><a href="Panama.html">Panama</a></li>
+              <li><a href="Morocco.html">Morocco</a></li>
+              <li><a href="Kenya.html">Kenya</a></li>
+              <li><a href="Turkey.html">Turkey</a></li>
+              <li><a href="India.html">India</a></li>
+              <li><a href="Netherlands.html">Netherlands</a></li>
+              <li><a href="Vietnam.html">Vietnam</a></li> 
+            </ul>
+      <!--     </div> -->
+      </nav>
+    <!--    <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav> -->
+
+
+    </header>
+  <!--    <div class="rightbox">
+         <h3>Tally Up</h3>
+          <p> Number of Countries Visited: 32 
+            Number of Countries Lived: 4
+            Number of Days Abroad: 450+
+          </p>
+      </div> -->
+     <div id="mapAttack"> 
+      <div id="map">
+      </div>
+        <script type="text/javascript">
+        var map;
+        function initMap() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: {lat:15, lng: 5},  
+            mapTypeControlOptions: {
+              mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+            }
+          });
+          var customMapType = new google.maps.StyledMapType(
+            [
+              {
+                "elementType": "labels.icon",
+                "stylers": [
+                  { "visibility": "off" }
+                ]
+              },{
+                "featureType": "landscape",
+                "elementType": "labels.text",
+                "stylers": [
+                  { "visibility": "off" },
+                  { "color": "#808080" }
+                ]
+              },{
+                "elementType": "labels",
+                "stylers": [
+                  { "visibility": "off" }
+                ]
+              },{
+                "featureType": "water",
+                "stylers": [
+                  { "hue": "#ff00bb" },
+                  { "color": "#808080" }
+                ]
+              },{
+                "featureType": "landscape.natural.landcover",
+                "elementType": "geometry.fill",
+                "stylers": [
+                  { "color": "#ee2a7b" },
+                  { "visibility": "on" },
+                  { "invert_lightness": true }
+                ]
+              }
+            ],
+            {
+              name: 'Custom Style'
+          });
+          var customMapTypeId = 'custom_style';
+          
+          map.mapTypes.set(customMapTypeId, customMapType);
+          map.setMapTypeId(customMapTypeId);
+          setMarkers(map);
+          // marker.setMap(map);
+
+          // var marker = new google.maps.Marker({
+          //     position: {lat:41.3833, lng: 2.1833},
+          //     map: map,
+          //     title: 'Hello World!'
+          //      });
+           // var image = 'images/lion.jpg';
+           //  var marker = new google.maps.Marker({
+           //    position: {lat:41.3833, lng: 2.1833}
+           //    map: map,
+            
+           //  });
+//****
+         // setMarkers(map);
+       
+
+
+       } // END INIT MAP FUNCTION
+      
+
+// Data for the markers consisting of a name, a LatLng and a zIndex for the
+// // order in which these markers should display on top of each other.
+    var visited = [
+        ['Canada ', 43.664620, -79.380118, 1],
+        ['Scotland', 56.885134, -4.203599, 2],
+        ['China', 39.880947, 116.409819, 3],
+        ['Russia', 59.939341, 30.317817, 4],
+        ['Domincan Republic ', 18.560361, -68.423562, 5],
+        ['Jamaica', 18.449333, -77.910463, 6],
+        ['Kenya', -1.274193, 36.779687, 7],
+        ['Spain', 41.422384, 2.043835, 8],
+        ['Morocco', 31.623513, -7.996867, 9],
+        ['Austria', 48.201925, 16.378000, 10],
+        ['Czech Republic', 50.080824, 14.441591, 11],
+        ['Netherlands', 52.319363, 4.961899, 12],
+        ['Germany', 50.281401, 8.812027, 13],
+        ['Italy', 45.226740, 11.343142, 14],
+        ['Hungary', 47.496250, 19.099260, 15],
+        ['UAE', 25.277965, 55.361606, 15],
+        ['Bangladesh', 23.182014, 89.180196, 16],
+        ['Mexico', 20.440448, -86.903068, 17],
+        ['Belize', 17.509184, -88.195602, 18],
+        ['Denmark', 55.687622, 12.476547, 19],
+        ['France', 48.852760, 2.353240, 20],
+        ['South Sudan', 4.859891, 31.578183, 21],
+        ['India', 19.201245, 73.517690, 22],
+        ['Bahamas', 26.661390, -78.544951, 23],
+        ['South Korea', 37.538426, 126.989550, 24],
+        ['Thailand', 13.722903, 100.633170, 25],
+        ['Turkey', 38.725604, 35.574984, 26],
+        ['Switzerland', 46.678366, 7.857171, 27],
+        ['Hong Kong', 22.316110, 113.540408, 28],
+        ['Vietnam', 10.787338, 106.644924, 29],
+        ['Taiwan ', 25.025095, 121.493514, 30],
+        ['Iceland', 63.681163, -17.851126, 31],
+        ['England', 51.532059, -0.099539, 32],
+        ['Panama', 8.420085, -82.264178, 33],
+        ['Costa Rica', 9.903148, -84.003482, 34]
+        ];
+
+        console.log("VISITED", visited);
+
+    function setMarkers(map) {
+          var image = {
+            url: 'images/target2Small.png',
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(32, 32),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(16, 16)
+          };
+          var shape = {
+            coords: [1, 1, 1, 20, 18, 20, 18, 1],
+            type: 'poly'
+          };
+          console.log("VISITED:: ", visited)
+
+          for (var i = 0; i < visited.length; i++) {
+            var destination = visited[i];
+            var marker = new google.maps.Marker({
+              position: {lat: destination[1], lng: destination[2]},
+              map: map,
+              icon: image,
+              shape: shape,
+              title: destination[0],
+              zIndex: destination[3]
+            });
+          }
+        }
+/////////// END BREAKY MARKERS
+
+
+       
+         
+        </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvJ7fXIJQGDrwzSGvmZOpqVmncyz_X8n4&callback=initMap">
+        </script>
+    </div>
+    <section class="module content">
+      <div class="row1">
+        <p>Travels become memories. Adventures become snapshots. Fellow travelers become friends. Welcome to my attempt at chronicling years of wanderlust. Journey on...
+        <!-- add first letter trick in css -->
+       </p>
+      </div>
+    <section>
+  <section class="module parallax parallax-1">
+      <div class="container">
+        <h1>Limitless</h1>
+      </div>
+    </section>
+     <section class="module content">
+        <div class="row1">
+        <p>Travel is the only thing you buy that makes you richer
+        <!-- add first letter trick in css -->
+       </p>
+      </div>
+    </section>
+    <section class="module parallax parallax-2">
+     <div class="container">
+        <h1>Raw</h1>
+      </div>
+    </section>
+    <section class="module content">
+        <div class="row1">
+        <p>Not all those who wander are lost -J.R.R. Tolkien
+        <!-- add first letter trick in css -->
+       </p>
+      </div>
+    </section>
+    <section class="module parallax parallax-3">
+       <div class="container">
+          <h1>Magical</h1>
+        </div>
+    </section>
+    </div>
+    <footer>
+    </footer>
+    <script src="test.js"></script>
+  </body>
+</html>

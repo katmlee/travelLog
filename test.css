@@ -1,0 +1,144 @@
+body{ background: black;
+	  opacity: 1;
+      color: white;
+      font-family: Poiret One;
+      text-align: center;
+	}
+.rightbox{
+	z-index: 9;
+}
+header{
+    position: fixed;
+    width:100%;
+    background: white;
+    margin-top:0px;
+    z-index: 10000;
+}
+
+#mapAttack {
+  padding-top: 187px;
+  margin-bottom: -30px;
+}
+
+/*Why is my logo when locked position is hidden behind my map?*/
+#logo{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    height: 70px auto;
+}
+
+a {color: black;}
+
+a:hover{
+  color: #ee2a7b;
+}
+nav{
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-color: white;
+    height:30px auto;
+}
+.dropList{
+  text-align: center;
+  float:right;
+  margin-left: 80px;
+}
+.row1{
+   font-size: 1.5em;
+    font-family: Poiret One;
+     text-align: center;
+     margin-bottom: 10px;
+     padding: 25px 75px 25px 75px;
+     background-color: white;
+     color: #ee2a7b;
+     width: 100%;
+/*     border-radius: 5px;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.photo-content img{
+        -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+/*section.module h2 {
+  margin-bottom: 40px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;*/
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+section.module.parallax-1 {
+  background-image: url("images/balloon.jpg");
+}
+section.module.parallax-2 {
+  background-image: url("images/lion 2.jpg");
+}
+section.module.parallax-3 {
+  background-image: url("images/ocean.jpg");
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+}
+/*
+.row1 ::first-letter{
+    font-size: 3em;
+    vertical-align: middle;
+}*/

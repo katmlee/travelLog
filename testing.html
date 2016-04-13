@@ -1,0 +1,73 @@
+<div id="map">
+      </div>
+        <script type="text/javascript">
+        var map;
+        function initMap() {
+          var customMapType = new google.maps.StyledMapType(
+            [
+              {
+                "elementType": "labels.icon",
+                "stylers": [
+                  { "visibility": "off" }
+                ]
+              },{
+                "featureType": "landscape",
+                "elementType": "labels.text",
+                "stylers": [
+                  { "visibility": "off" },
+                  { "color": "#808080" }
+                ]
+              },{
+                "elementType": "labels",
+                "stylers": [
+                  { "visibility": "off" }
+                ]
+              },{
+                "featureType": "water",
+                "stylers": [
+                  { "hue": "#ff00bb" },
+                  { "color": "#808080" }
+                ]
+              },{
+                "featureType": "landscape.natural.landcover",
+                "elementType": "geometry.fill",
+                "stylers": [
+                  { "color": "#ee2a7b" },
+                  { "visibility": "on" },
+                  { "invert_lightness": true }
+                ]
+              }
+            ],
+            {
+              name: 'Custom Style'
+          });
+          var customMapTypeId = 'custom_style';
+
+          // var marker = new google.maps.Marker({
+          //     position: {lat:41.3833, lng: 2.1833},
+          //     map: map,
+          //     title: 'Hello World!'
+          //      });
+           var image = 'images/lion.jpg';
+            var marker = new google.maps.Marker({
+              position: {lat:41.3833, lng: 2.1833}
+              map: map,
+            
+            });
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: {lat:15, lng: 5},  
+            mapTypeControlOptions: {
+              mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+            }
+          });
+
+          map.mapTypes.set(customMapTypeId, customMapType);
+          map.setMapTypeId(customMapTypeId);
+          marker.setMap(map);
+        } 
+        </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvJ7fXIJQGDrwzSGvmZOpqVmncyz_X8n4&callback=initMap">
+        </script>
